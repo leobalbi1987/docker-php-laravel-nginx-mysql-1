@@ -11,8 +11,8 @@ services:
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
-   
-    command: bash -c "if [ ! -f /var/www/projects/example-app/.env ]; then cp /var/www/projects/example-app/.env.example /var/www/projects/example-app/.env; fi && composer install --no-dev --optimize-autoloader && php artisan key:generate && chown -R www-data:www-data /var/www/projects/example-app/storage /var/www/projects/example-app/bootstrap/cache && php-fpm"
+      - APP_KEY=base64:YDSNWz/dgToXyyC7VbpLDSvpW+MUYf4CbqGtUUaUPuk=
+    command: bash -c "composer install --no-dev --optimize-autoloader && chown -R www-data:www-data /var/www/projects/example-app/storage /var/www/projects/example-app/bootstrap/cache && php-fpm"
 
   web-server:
     image: nginx:1.21.1

@@ -41,8 +41,6 @@ COPY ./projects/example-app /var/www/projects/example-app
 
 # Executa o Composer para instalar as dependências do Laravel
 RUN composer install --no-dev --optimize-autoloader
-# Copia o arquivo .env.example para .env
-COPY ./projects/example-app/.env.example /var/www/projects/example-app/.env
 
 # Define permissões adequadas para o Laravel
 RUN chown -R www-data:www-data /var/www/projects/example-app/storage /var/www/projects/example-app/bootstrap/cache

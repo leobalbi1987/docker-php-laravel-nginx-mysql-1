@@ -34,4 +34,4 @@ gen-ssl:
 	@docker rm -f gen-ssl-container
 
 start-laravel:
-	@docker run --rm -v "C:\webdev\GithubRepos\environmentProject\projects:/var/www" -w //var/www composer composer create-project laravel/laravel $(name)-app
+	@docker run --rm -v "C:\projects:/var/www" -w //var/www composer composer create-project laravel/laravel $(name)-app
